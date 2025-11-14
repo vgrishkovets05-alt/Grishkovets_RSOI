@@ -1,0 +1,102 @@
+/* Подключаем общие шрифты через Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+
+/* Общие стили страницы */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f1ea; /* теплый бежевый фон */
+    color: #4b3b2a; /* темно-коричневый текст */
+    margin: 0;
+    padding: 0;
+}
+
+/* Хедер */
+header {
+    background-color: #a86f3f; /* древесный коричневый */
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-family: 'Playfair Display', serif;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Параграф приветствия */
+p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 20px 0;
+}
+
+/* Контейнер */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff8f0; /* светлый древесный оттенок */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Заголовки внутри контейнера */
+h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #5a4032;
+    margin-bottom: 15px;
+}
+
+/* Кнопки */
+button {
+    background-color: #a86f3f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: #905c34;
+    transform: translateY(-2px);
+}
+
+/* Инпуты */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #d2b48c;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Секция товаров */
+#products div {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff4e6;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Сообщения регистрации и входа */
+#registerMessage, #loginMessage {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #905c34;
+}
+
+/* Горизонтальная линия */
+hr {
+    border: none;
+    border-top: 1px solid #d2b48c;
+    margin: 30px 0;
+}
