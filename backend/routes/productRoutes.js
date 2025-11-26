@@ -1,27 +1,20 @@
 import express from "express";
-import Product from "../models/Product.js";
+import {
+    getProducts,
+    getProductById,
+    createProduct,
+    updateProduct,
+    deleteProduct
+} from "../controllers/productController.js";
 
 const router = express.Router();
 
-// GET /api/products — список товаров
-router.get("/", async (req, res) => {
-    try {
-        const products = await Product.find();
-        res.json(products);
-    } catch (err) {
-        res.status(500).json({ message: "Ошибка сервера" });
-    }
-});
-// POST /api/products — добавить товар
-router.post("/", async (req, res) => {
-    try {
-        const newProduct = new Product(req.body);
-        const savedProduct = await newProduct.save();
-        res.status(201).json(savedProduct);
-    } catch (err) {
-        res.status(500).json({ message: "Ошибка при добавлении товара" });
-    }
-});
-
+// CRUD маршруты
+router.get("/", getProducts);         // получить все товары
+router.get("/:id", getProductById);   // получить товар по id
+router.post("/", createProduct);      // создать товар
+router.put("/:id", updateProduct);    // обновить товар
+router.delete("/:id", deleteProduct); // удалить товар
 
 export default router;
+

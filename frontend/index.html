@@ -7,10 +7,24 @@
 </head>
 <body>
 <header>
-    <h1>Handmade Shop</h1>
+    <div class="header-left">
+        <h1>Handmade Shop</h1>
+    </div>
+    <div class="header-center">
+        <button onclick="showHome()">Главная</button>
+        <button onclick="loadCart()">Корзина</button>
+        <button onclick="showReviews()">Отзывы</button>
+    </div>
+    <div class="header-right" id="userArea">
+        <!-- Здесь будут кнопки Вход/Регистрация или имя пользователя -->
+    </div>
 </header>
-<p>Добро пожаловать в магазин изделий ручной работы</p>
+
+<main id="mainContent" class="container">
+    <p>Добро пожаловать в магазин изделий ручной работы</p>
+</main>
 
 <script src="js/app.js"></script>
 </body>
 </html>
+

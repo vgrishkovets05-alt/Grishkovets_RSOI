@@ -7,38 +7,32 @@ import User from "../models/User.js";
 
 const router = express.Router();
 
-// 🔹 Регистрация пользователя
+// Регистрация пользователя
 router.post("/register", async (req, res) => {
     try {
         const { name, email, password } = req.body;
 
-        // Проверяем, есть ли пользователь
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ message: "Такой email уже зарегистрирован" });
         }
 
-        // Хешируем пароль
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        // Создаём нового пользователя
         const newUser = new User({
             name,
             email,
-            password: hashedPassword,
+            password, // НЕ ХЭШИРУЕМ! модель сама захеширует
         });
 
         await newUser.save();
 
         res.status(201).json({ message: "Пользователь зарегистрирован" });
     } catch (err) {
-        console.error(" Ошибка при регистрации:", err);
+        console.error("Ошибка при регистрации:", err);
         res.status(500).json({ message: "Ошибка сервера" });
     }
-
 });
 
-// 🔹 Авторизация пользователя
+//  Авторизация пользователя
 router.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;
